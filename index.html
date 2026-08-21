@@ -53,11 +53,9 @@
     .gallery-item { width: 260px !important; }
   }
   @media (max-width: 860px) {
-    .rc-hero-stats { gap: 0 !important; display: grid !important; grid-template-columns: repeat(3, 1fr); }
-    .rc-hero-stats > div[style*="width:1px"], .rc-hero-stats > div[style*="width: 1px"] { display: none !important; }
-    .rc-hero-stats > div:not([style*="1px"]) { border-left: 1px solid rgba(255,255,255,0.12); padding-left: 14px; }
-    .rc-hero-stats > div:first-child { border-left: 0; padding-left: 0; }
-    .rc-hero-stats > div:not([style*="1px"]) > div:first-child { font-size: 18px !important; }
+    .rc-hero-stats { gap: 14px !important; grid-template-columns: auto 1px auto 1px auto !important; }
+    .rc-hero-stats > div:not([style*="1px"]) { border-left: 0; padding-left: 0; }
+    .rc-hero-stats > div:not([style*="1px"]) > div:first-child { font-size: 15px !important; }
   }
   .quote-btn:active { transform: scale(0.98); }
   .nav-link { position:relative; transition: color .2s ease, transform .2s ease; }
@@ -111,18 +109,18 @@
           <div style="display:inline-flex; align-items:center; gap:10px; border:1px solid rgba(255,255,255,0.18); padding:7px 14px; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.14em; color:#c9ccd1; margin-bottom:28px;">
             <span style="width:7px; height:7px; background:#2e6fc7; display:inline-block;"></span>SREMSKA MITROVICA · SRBIJA
           </div>
-          <h1 style="font-size:clamp(40px,5.4vw,68px); font-weight:900; line-height:0.98;">Lim izrađen<br><span style="color:#5b9be8;">kako vi zamislite</span></h1>
-          <p style="font-size:19px; line-height:1.55; color:#c9ccd1; max-width:520px; margin:26px 0 34px;">Lasersko sečenje, izrada crteža i montaža. Doneseš crtež ili ideju, mi izradimo — od jednog komada do serije.</p>
+          <h1 style="font-size:clamp(40px,5.4vw,68px); font-weight:900; line-height:0.98;">Lim obrađen<br><span style="color:#5b9be8;">kako vi zamislite</span></h1>
+          <p style="font-size:19px; line-height:1.55; color:#c9ccd1; max-width:520px; margin:26px 0 34px;">Vaša ideja, naša izrada. Lasersko sečenje i izrada crteža — od jednog komada do serije.</p>
           <div style="display:flex; gap:14px; flex-wrap:wrap;">
             <a href="#ponuda" class="hero-btn-primary" style="background:#2e6fc7; color:#fff; font-weight:700; padding:16px 28px; font-size:15px;">Zatraži ponudu</a>
             <a href="#usluge" class="hero-btn-ghost" style="border:1px solid rgba(255,255,255,0.24); color:#fff; font-weight:600; padding:16px 28px; font-size:15px;">Pogledaj usluge</a>
           </div>
-          <div class="rc-hero-stats" style="display:flex; gap:36px; margin-top:44px; flex-wrap:wrap;">
-            <div><div style="font-family:'Archivo'; font-weight:800; font-size:28px;">3 god.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">NA TRŽIŠTU</div></div>
-            <div style="width:1px; background:rgba(255,255,255,0.12);"></div>
-            <div><div style="font-family:'Archivo'; font-weight:800; font-size:28px;">od 1 kom.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">DO SERIJE</div></div>
-            <div style="width:1px; background:rgba(255,255,255,0.12);"></div>
-            <div><div style="font-family:'Archivo'; font-weight:800; font-size:28px;">čelik · inox · alu</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">MATERIJALI</div></div>
+          <div class="rc-hero-stats" style="display:grid; grid-template-columns:auto 1px auto 1px auto; align-items:center; gap:28px; margin-top:44px; justify-content:start;">
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:24px; white-space:nowrap;">3 god.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">NA TRŽIŠTU</div></div>
+            <div style="width:1px; align-self:stretch; background:rgba(255,255,255,0.12);"></div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:24px; white-space:nowrap;">od 1 kom.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">DO SERIJE</div></div>
+            <div style="width:1px; align-self:stretch; background:rgba(255,255,255,0.12);"></div>
+            <div><div style="font-family:'Archivo'; font-weight:800; font-size:24px; white-space:nowrap;">čelik · inox · alu</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">MATERIJALI</div></div>
           </div>
         </div>
         <div style="aspect-ratio:4/5; border:1px solid rgba(255,255,255,0.12); overflow:hidden; position:relative;">
@@ -414,7 +412,7 @@ class Component extends DCLogic {
       { no: "1", title: "Pošalji crtež ili ideju", desc: "DXF, DWG, PDF, STEP ili obična skica. Sve što imaš.", img: "assets/proces-1.jpg" },
       { no: "2", title: "Dobiješ ponudu i rok", desc: "Cena i rok, jasno, obično isti ili sledeći radni dan.", img: "assets/proces-2.jpg" },
       { no: "3", title: "Sečemo po crtežu", desc: "Laser precizno iseče svaki komad tačno po tehničkom crtežu.", img: "assets/proces-3.jpg" },
-      { no: "4", title: "Montaža i preuzimanje", desc: "Sklopimo ako treba i javimo da je spremno za preuzimanje.", img: "assets/proces-4.jpg" },
+      { no: "4", title: "Preuzimanje", desc: "Javimo ti kad je gotovo i dolaziš po svoje komade.", img: "assets/proces-4.jpg" },
     ];
     const hp = this.state.hoveredStep;
     const steps = stepsRaw.map((s, i) => {
