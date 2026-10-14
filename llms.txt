@@ -1,0 +1,57 @@
+# CNC Radosavljević
+
+CNC Radosavljević je radionica iz Sremske Mitrovice za lasersko i CNC sečenje lima, pripremu crteža za CNC sečenje, uslužno sečenje po meri i CNC sečene dekorativne panele.
+
+## Glavne stranice
+
+- https://cnc-radosavljevic.com/ — CNC obrada lima i pregled usluga
+- https://cnc-radosavljevic.com/lasersko-secenje-lima/ — lasersko sečenje lima
+- https://cnc-radosavljevic.com/izrada-crteza-za-cnc-secenje/ — izrada crteža za CNC sečenje
+- https://cnc-radosavljevic.com/cnc-ograde/ — CNC ograde i dekorativni paneli
+- https://cnc-radosavljevic.com/usluzno-secenje-lima/ — uslužno sečenje lima po meri
+
+## Potvrđene tehničke mogućnosti
+
+- Mašina: SENFENG SF-3015N
+- Snaga: 3 kW
+- Radni format: 3000 × 1500 mm
+- Čelik: do 20 mm
+- Inox: do 8 mm
+- Aluminijum: do 8 mm
+- Pocinkovani lim: do 8 mm
+
+## Ulazni podaci za posao
+
+Prihvaćeni su:
+- DXF
+- DWG
+- skica
+- fizički uzorak
+
+Ako kupac nema gotov tehnički crtež, crtež može da se pripremi prema ideji, skici ili uzorku.
+
+## Usluge
+
+### Lasersko sečenje lima
+Sečenje čelika, inoxa, aluminijuma i pocinkovanog lima, od pojedinačnih komada do manjih i većih serija.
+
+### Izrada crteža za CNC sečenje
+Priprema crteža prema skici, ideji ili uzorku, za dalje CNC sečenje.
+
+### CNC ograde i dekorativni paneli
+Usluga obuhvata crtanje i CNC sečenje panela za ograde, kapije, enterijer i druge dekorativne namene. Montaža nije navedena kao deo usluge.
+
+### Uslužno sečenje lima po meri
+Izrada delova prema crtežu, skici ili uzorku, uključujući pojedinačne komade i serije.
+
+## Rokovi i isporuka
+
+- Ponuda se šalje istog dana nakon pregleda zahteva.
+- Za dekorativne panele okviran rok je 1–2 radna dana, u zavisnosti od posla.
+- Za serije se rok dogovara prema crtežu, količini i obimu posla.
+- Za veće poslove moguća je dostava po dogovoru.
+
+## Kontakt
+
+- Telefon: +381 65 802 5085
+- Sajt: https://cnc-radosavljevic.com/
