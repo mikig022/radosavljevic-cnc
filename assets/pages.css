@@ -162,6 +162,10 @@ p { margin: 0; }
 .services-subnav a { display: block; padding: 10px 0; font-size: 14px; border-bottom: 1px solid var(--line); }
 .services-subnav a:last-child { border: 0; }
 .mobile-nav nav .mobile-nav__child { padding-left: 16px; font-size: 13px; }
+@media (min-width: 861px) and (max-width: 1150px) {
+  .site-header__inner { gap: 16px; }
+  .desktop-nav { gap: 15px; white-space: nowrap; }
+}
 @media(max-width: 860px) {
   .facts-grid { grid-template-columns: repeat(2, 1fr); }
   .steps-list { grid-template-columns: 1fr; }
@@ -174,4 +178,55 @@ p { margin: 0; }
   .facts-grid { grid-template-columns: 1fr 1fr; }
   .facts-grid .info-card { padding: 18px; }
   .page-hero__actions .button { width: 100%; }
+}
+
+/* Proizvodi dele grid, tipografiju i dugmad sa uslužnim stranama. */
+.product-hero .page-hero__inner { align-items: center; }
+.product-hero:not(.product-hero--detail) .page-hero__actions { margin-top: 0; }
+.product-hero__media { margin: 0; aspect-ratio: auto; overflow: visible; background: #242a31; }
+.product-hero__media > a { display: block; aspect-ratio: 5 / 4; }
+.product-hero__media picture, .product-card__image picture { display: block; width: 100%; height: 100%; }
+.product-hero__media img, .product-card__image img {
+  display: block; width: 100%; height: 100%; object-fit: contain;
+}
+.product-card { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); border: 1px solid var(--line); }
+.product-card__image { display: block; aspect-ratio: 5 / 4; background: #eef0f2; overflow: hidden; }
+.product-card__body { padding: clamp(24px,4vw,48px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.product-card h2 { font-size: clamp(25px,3vw,36px); line-height: 1.15; margin-bottom: 20px; }
+.product-card__price { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; margin-bottom: 7px; }
+.product-card__price strong { font: 900 clamp(29px,3vw,40px)/1.1 var(--font-heading); }
+.product-card__price span { color: #596575; font-size: 14px; }
+.product-card__body > .product-card__note { color: var(--ink); font-weight: 700; margin-bottom: 28px; }
+.product-price { max-width: 560px; padding: 19px 22px; margin: 0 0 26px; background: #f5f7fa; border-top: 3px solid var(--blue); color: var(--ink); }
+.product-price strong { display: block; font: 900 clamp(34px,3.4vw,48px)/1.12 var(--font-heading); }
+.product-price span { display: block; margin-top: 2px; font-size: 14px; color: #596575; }
+.product-price p { margin-top: 10px; font-size: 14px; line-height: 1.55; }
+.product-price p:first-of-type { font-weight: 700; }
+.product-hero--detail .page-hero__intro { margin: 18px 0 0; }
+.product-hero--detail .product-price { margin-top: 26px; }
+.product-characteristics { padding-top: 42px; padding-bottom: 48px; }
+.product-characteristics h2 { margin-bottom: 18px; }
+.product-specs { max-width: 780px; margin: 0; border-top: 1px solid var(--line); }
+.product-specs > div { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 15px; padding: 17px 0; border-bottom: 1px solid var(--line); }
+.product-specs dt { color: var(--text-muted); }
+.product-specs dd { margin: 0; text-align: right; font-weight: 700; }
+.product-gallery { padding-top: 48px; padding-bottom: 64px; }
+.product-gallery h2 { margin-bottom: 26px; }
+.product-gallery__grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.product-gallery__grid figure { min-width: 0; margin: 0; }
+.product-gallery__grid a { display: block; aspect-ratio: 4 / 3; background: #eef0f2; }
+.product-gallery__grid picture, .product-gallery__grid img { display: block; width: 100%; height: 100%; }
+.product-gallery__grid img { object-fit: contain; }
+.product-gallery__grid figcaption { padding-top: 10px; color: var(--text-muted); font: 400 12px/1.5 var(--font-mono); }
+@media (max-width: 860px) {
+  .product-card { grid-template-columns: 1fr; }
+  .product-card__image { max-height: 450px; }
+}
+@media (max-width: 520px) {
+  .product-hero__media > a { aspect-ratio: 5 / 4; }
+  .product-card__body { padding: 26px 22px; }
+  .product-specs > div { font-size: 14px; }
+  .product-characteristics { padding-top: 30px; padding-bottom: 36px; }
+  .product-gallery { padding-top: 36px; padding-bottom: 48px; }
+  .product-gallery__grid { grid-template-columns: 1fr; }
 }

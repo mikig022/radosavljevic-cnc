@@ -2,20 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://cnc-radosavljevic.com/</loc>
-    <lastmod>2026-08-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://cnc-radosavljevic.com/cnc-ograde/</loc>
-  </url>
-  <url>
-    <loc>https://cnc-radosavljevic.com/izrada-crteza-za-cnc-secenje/</loc>
   </url>
   <url>
     <loc>https://cnc-radosavljevic.com/lasersko-secenje-lima/</loc>
   </url>
   <url>
+    <loc>https://cnc-radosavljevic.com/izrada-crteza-za-cnc-secenje/</loc>
+  </url>
+  <url>
+    <loc>https://cnc-radosavljevic.com/cnc-ograde/</loc>
+  </url>
+  <url>
     <loc>https://cnc-radosavljevic.com/usluzno-secenje-lima/</loc>
+  </url>
+  <url>
+    <loc>https://cnc-radosavljevic.com/proizvodi/</loc>
+  </url>
+  <url>
+    <loc>https://cnc-radosavljevic.com/proizvodi/bravarski-sto/</loc>
   </url>
 </urlset>

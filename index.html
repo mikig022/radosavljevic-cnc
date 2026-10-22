@@ -14,7 +14,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta name="description" content="CNC obrada metala i lima u Sremskoj Mitrovici. Lasersko sečenje čelika, inoxa i aluminijuma, izrada tehničkih crteža i dekorativnih panela. Od jednog komada do serije.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://cnc-radosavljevic.com/">
-<script src="./support.js"></script>
 <meta name="author" content="Radosavljević CNC obrada lima">
 <meta name="theme-color" content="#16181b">
 <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
@@ -74,45 +73,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 }
 </script>
-<script>
-(() => {
-  if (!window.location.hash) return;
-  const id = decodeURIComponent(window.location.hash.slice(1));
-  function scrollToTarget() {
-    const target = document.getElementById(id);
-    if (!target || !target.closest('#dc-root')) {
-      return false;
-    }
-    target.scrollIntoView({
-      behavior: 'instant',
-      block: 'start'
-    });
-    return true;
-  }
-  if (scrollToTarget()) return;
-  const observer = new MutationObserver(() => {
-    if (scrollToTarget()) {
-      observer.disconnect();
-    }
-  });
-  observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
-  });
-  setTimeout(() => observer.disconnect(), 15000);
-})();
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7VCT999"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-<x-dc>
-<helmet>
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -143,6 +106,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   @media (min-width: 861px) {
     .rc-header { position: static !important; }
   }
+  @media (min-width: 861px) and (max-width: 1150px) {
+    .rc-desktop-nav { gap: 16px !important; }
+  }
   @media (max-width: 860px) {
     .rc-desktop-nav { display: none !important; }
     .rc-mobile-toggle { display: grid !important; place-items: center; }
@@ -163,8 +129,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   .nav-link::after { content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px; background:#2e6fc7; transform:scaleX(0); transform-origin:left; transition:transform .25s ease; }
   .nav-link:hover { color:#16181b !important; transform:translateY(-2px); }
   .nav-link:hover::after { transform:scaleX(1); }
+
+  [hidden] { display:none !important; }
+  .rc-mobile-menu { display:none; }
+  .rc-mobile-toggle { list-style:none; position:absolute; top:15px; right:24px; }
+  .rc-mobile-toggle::-webkit-details-marker { display:none; }
+  .rc-mobile-toggle::marker { content:""; }
+  @media (max-width:860px) { .rc-mobile-menu { display:block; } }
+  .rc-service-card { background:#fff; padding:40px 34px 34px; position:relative; overflow:hidden; cursor:pointer; transition:background .25s ease, transform .25s ease, box-shadow .25s ease; min-height:252px; display:flex; flex-direction:column; transform:translateY(0); box-shadow:0 0 0 rgba(0,0,0,0); z-index:1; }
+  .rc-service-card:hover { background:#16181b; transform:translateY(-8px); box-shadow:0 20px 38px rgba(0,0,0,0.28); z-index:2; }
+  .rc-service-ghost { position:absolute; top:-14px; right:18px; font-family:'Archivo'; font-weight:900; font-size:120px; line-height:1; color:#f0f1f2; transition:color .25s ease; pointer-events:none; }
+  .rc-service-card:hover .rc-service-ghost { color:rgba(94,155,232,0.16); }
+  .rc-service-bar { width:24px; height:3px; background:#2e6fc7; margin-bottom:20px; transition:width .25s ease; }
+  .rc-service-card:hover .rc-service-bar { width:48px; }
+  .rc-service-title { font-size:23px; font-weight:700; margin-bottom:12px; color:#16181b; position:relative; transition:color .25s ease; }
+  .rc-service-card:hover .rc-service-title { color:#fff; }
+  .rc-service-desc { font-size:15.5px; line-height:1.6; color:#5c6066; position:relative; margin-bottom:22px; transition:color .25s ease; }
+  .rc-service-card:hover .rc-service-desc { color:#a3a7ad; }
+  .rc-service-tags { display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; position:relative; }
+  .rc-service-tag { font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.06em; padding:6px 11px; border:1px solid #e2e4e7; color:#8b9096; transition:all .25s ease; }
+  .rc-service-card:hover .rc-service-tag { border-color:rgba(255,255,255,0.22); color:#c9ccd1; }
+  .rc-step-card { background:#16181b; display:flex; flex-direction:column; transform:translateY(0); box-shadow:0 0 0 rgba(0,0,0,0); z-index:1; position:relative; transition:transform .3s ease, box-shadow .3s ease; }
+  .rc-step-card:hover { transform:translateY(-10px); box-shadow:0 22px 40px rgba(0,0,0,0.5); z-index:2; }
+  .rc-step-image { width:100%; height:100%; object-fit:cover; display:block; transform:scale(1); transition:transform .35s ease; }
+  .rc-step-card:hover .rc-step-image { transform:scale(1.08); }
 </style>
-</helmet>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P7VCT999"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 <div style="width:100%; overflow-x:clip;">
 
   <svg width="0" height="0" style="position:absolute;" aria-hidden="true">
@@ -174,30 +169,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </svg>
 
   <header class="rc-header" style="position:sticky; top:0; z-index:50; background:rgba(255,255,255,0.92); backdrop-filter:blur(10px); border-bottom:1px solid #e2e4e7;">
-    <div style="max-width:1200px; margin:0 auto; padding:0 24px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
+    <div data-nosnippet style="max-width:1200px; margin:0 auto; padding:0 24px; height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px;">
       <a href="#top" style="display:flex; align-items:center;">
         <img src="assets/logo.png" alt="Radosavljević CNC obrada lima" style="height:46px; width:auto; display:block;" />
       </a>
       <nav class="rc-desktop-nav" aria-label="Glavna navigacija" style="display:flex; align-items:center; gap:28px;">
         <a href="#usluge" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">Usluge</a>
+        <a href="/proizvodi/" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">Proizvodi</a>
         <a href="#onama" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">O nama</a>
         <a href="#zasto" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">Zašto mi</a>
         <a href="#proces" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">Proces</a>
         <a href="#kontakt" class="nav-link" style="font-size:14px; font-weight:500; color:#5c6066;">Kontakt</a>
         <a href="#ponuda" class="quote-btn" style="font-size:14px; font-weight:600; color:#fff; background:#16181b; padding:10px 18px;">Zatraži ponudu</a>
       </nav>
-      <button onClick="{{ toggleMenu }}" aria-label="Meni" class="rc-mobile-toggle" style="display:none; background:none; border:1px solid #e2e4e7; width:42px; height:42px; cursor:pointer; font-size:20px;">≡</button>
     </div>
-    <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
-      <div style="border-top:1px solid #e2e4e7; padding:12px 24px; display:flex; flex-direction:column; gap:4px;">
-        <a href="#usluge" onClick="{{ closeMenu }}" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Usluge</a>
-        <a href="#onama" onClick="{{ closeMenu }}" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">O nama</a>
-        <a href="#zasto" onClick="{{ closeMenu }}" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Zašto mi</a>
-        <a href="#proces" onClick="{{ closeMenu }}" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Proces</a>
-        <a href="#kontakt" onClick="{{ closeMenu }}" style="padding:12px 0; font-weight:500;">Kontakt</a>
-        <a href="#ponuda" onClick="{{ closeMenu }}" style="margin-top:8px; text-align:center; padding:14px 0; font-weight:600; color:#fff; background:#16181b;">Zatraži ponudu</a>
-      </div>
-    </sc-if>
+    <details class="rc-mobile-menu">
+      <summary aria-label="Meni" class="rc-mobile-toggle" style="background:none; border:1px solid #e2e4e7; width:42px; height:42px; cursor:pointer; font-size:20px;">≡</summary>
+      <nav id="home-mobile-nav" aria-label="Mobilna navigacija" style="border-top:1px solid #e2e4e7; padding:12px 24px; display:flex; flex-direction:column; gap:4px;">
+        <a href="#usluge" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Usluge</a>
+        <a href="/proizvodi/" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Proizvodi</a>
+        <a href="#onama" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">O nama</a>
+        <a href="#zasto" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Zašto mi</a>
+        <a href="#proces" style="padding:12px 0; font-weight:500; border-bottom:1px solid #f0f1f2;">Proces</a>
+        <a href="#kontakt" style="padding:12px 0; font-weight:500;">Kontakt</a>
+        <a href="#ponuda" style="margin-top:8px; text-align:center; padding:14px 0; font-weight:600; color:#fff; background:#16181b;">Zatraži ponudu</a>
+      </nav>
+    </details>
   </header>
 
   <main id="top">
@@ -212,11 +209,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
           <h1 style="font-size:clamp(40px,5.4vw,68px); font-weight:900; line-height:0.98;">Lim obrađen<br> <span style="color:#5b9be8;">kako vi zamislite</span></h1>
           <p style="font-size:19px; line-height:1.55; color:#c9ccd1; max-width:520px; margin:26px 0 34px;">Vaša ideja, naša izrada. CNC obrada metala i lima — lasersko sečenje i izrada crteža, od jednog komada do serije.</p>
-          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <div data-nosnippet style="display:flex; gap:14px; flex-wrap:wrap;">
             <a href="#ponuda" class="hero-btn-primary" style="background:#2e6fc7; color:#fff; font-weight:700; padding:16px 28px; font-size:15px;">Zatraži ponudu</a>
             <a href="#usluge" class="hero-btn-ghost" style="border:1px solid rgba(255,255,255,0.24); color:#fff; font-weight:600; padding:16px 28px; font-size:15px;">Pogledaj usluge</a>
           </div>
-          <div class="rc-hero-stats" style="display:grid; grid-template-columns:auto 1px auto 1px auto; align-items:center; gap:28px; margin-top:44px; justify-content:start;">
+          <div class="rc-hero-stats" data-nosnippet style="display:grid; grid-template-columns:auto 1px auto 1px auto; align-items:center; gap:28px; margin-top:44px; justify-content:start;">
             <div><div style="font-family:'Archivo'; font-weight:800; font-size:24px; white-space:nowrap;">3 god.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">NA TRŽIŠTU</div></div>
             <div style="width:1px; align-self:stretch; background:rgba(255,255,255,0.12);"></div>
             <div><div style="font-family:'Archivo'; font-weight:800; font-size:24px; white-space:nowrap;">od 1 kom.</div><div style="font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.08em;">DO SERIJE</div></div>
@@ -237,19 +234,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <h2 style="font-size:clamp(30px,4vw,44px); font-weight:800; max-width:560px;">Šta radimo</h2>
       </div>
       <div class="rc-usluge-grid" style="display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:#e2e4e7; border:1px solid #e2e4e7;">
-        <sc-for list="{{ services }}" as="s" hint-placeholder-count="4">
-          <a href="{{ s.href }}" style="{{ s.cardStyle }}" onMouseEnter="{{ s.onEnter }}" onMouseLeave="{{ s.onLeave }}">
-            <div style="{{ s.ghostStyle }}">{{ s.no }}</div>
-            <div style="{{ s.barStyle }}"></div>
-            <h3 style="{{ s.titleStyle }}">{{ s.title }}</h3>
-            <p style="{{ s.descStyle }}">{{ s.desc }}</p>
-            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; position:relative;">
-              <sc-for list="{{ s.tags }}" as="t" hint-placeholder-count="3">
-                <span style="{{ s.tagStyle }}">{{ t }}</span>
-              </sc-for>
-            </div>
+          <a class="rc-service-card" href="/lasersko-secenje-lima/">
+            <div class="rc-service-ghost" aria-hidden="true">01</div>
+            <div class="rc-service-bar" aria-hidden="true"></div>
+            <h3 class="rc-service-title">Lasersko sečenje</h3>
+            <p class="rc-service-desc">Čisti rezovi na čeliku, inoxu i aluminijumu. Ivice su gotove, bez naknadne obrade.</p>
+            <div class="rc-service-tags"><span class="rc-service-tag">Čelik</span><span class="rc-service-tag">Inox</span><span class="rc-service-tag">Aluminijum</span><span class="rc-service-tag">Pocinkovano</span></div>
           </a>
-        </sc-for>
+          <a class="rc-service-card" href="/izrada-crteza-za-cnc-secenje/">
+            <div class="rc-service-ghost" aria-hidden="true">02</div>
+            <div class="rc-service-bar" aria-hidden="true"></div>
+            <h3 class="rc-service-title">Izrada crteža</h3>
+            <p class="rc-service-desc">Nemaš tehnički crtež? Napravimo ga po tvojoj ideji, skici ili uzorku, spreman za sečenje.</p>
+            <div class="rc-service-tags"><span class="rc-service-tag">DXF / DWG</span><span class="rc-service-tag">Po skici</span><span class="rc-service-tag">Po uzorku</span></div>
+          </a>
+          <a class="rc-service-card" href="/cnc-ograde/">
+            <div class="rc-service-ghost" aria-hidden="true">03</div>
+            <div class="rc-service-bar" aria-hidden="true"></div>
+            <h3 class="rc-service-title">Dekorativni paneli</h3>
+            <p class="rc-service-desc">Ukrasni paneli za ograde, kapije i enterijer. Šara po želji, isečena čisto i precizno.</p>
+            <div class="rc-service-tags"><span class="rc-service-tag">Ograde</span><span class="rc-service-tag">Kapije</span><span class="rc-service-tag">Enterijer</span></div>
+          </a>
+          <a class="rc-service-card" href="/usluzno-secenje-lima/">
+            <div class="rc-service-ghost" aria-hidden="true">04</div>
+            <div class="rc-service-bar" aria-hidden="true"></div>
+            <h3 class="rc-service-title">Izrada po meri</h3>
+            <p class="rc-service-desc">Izradimo komad po tvojoj zamisli — od prototipa do gotove serije, tačno po specifikaciji.</p>
+            <div class="rc-service-tags"><span class="rc-service-tag">Prototip</span><span class="rc-service-tag">Custom</span><span class="rc-service-tag">Serija</span></div>
+          </a>
       </div>
     </section>
     <section id="proces" style="background:#16181b; color:#fff;">
@@ -257,23 +269,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div style="font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.16em; color:#2e6fc7; margin-bottom:14px;">02 — KAKO RADIMO</div>
         <h2 style="font-size:clamp(30px,4vw,44px); font-weight:800; margin-bottom:52px; max-width:620px;">Od crteža do gotovog komada</h2>
         <div class="rc-proces-grid" style="display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.12);">
-          <sc-for list="{{ steps }}" as="p" hint-placeholder-count="4">
-            <div style="{{ p.cardStyle }}" onMouseEnter="{{ p.onEnter }}" onMouseLeave="{{ p.onLeave }}">
-              <div style="aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.12); position:relative;">
-                <sc-if value="{{ p.hasImg }}" hint-placeholder-val="{{ false }}">
-                  <img src="{{ p.img }}" alt="{{ p.title }} — CNC obrada lima" loading="lazy" style="{{ p.imgStyle }}" />
-                </sc-if>
-                <sc-if value="{{ p.noImg }}" hint-placeholder-val="{{ true }}">
-                  <div style="width:100%; height:100%; background-image:repeating-linear-gradient(45deg, #23262b 0 12px, #292c31 12px 24px); display:grid; place-items:center; font-family:'IBM Plex Mono'; font-size:11px; color:#8b9096; letter-spacing:0.1em;">[ FOTOGRAFIJA ]</div>
-                </sc-if>
-                <div style="position:absolute; top:14px; left:14px; font-family:'Archivo'; font-weight:900; font-size:34px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.7);">{{ p.no }}</div>
-              </div>
-              <div style="padding:26px 24px;">
-                <h3 style="font-size:19px; font-weight:700; margin-bottom:10px;">{{ p.title }}</h3>
-                <p style="font-size:14.5px; color:#a3a7ad; line-height:1.6;">{{ p.desc }}</p>
-              </div>
+          <div class="rc-step-card">
+            <div style="aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.12); position:relative;">
+              <img class="rc-step-image" src="assets/proces-1.jpg" alt="Pošalji crtež ili ideju — CNC obrada lima" loading="lazy">
+              <div style="position:absolute; top:14px; left:14px; font-family:'Archivo'; font-weight:900; font-size:34px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.7);">1</div>
             </div>
-          </sc-for>
+            <div style="padding:26px 24px;">
+              <h3 style="font-size:19px; font-weight:700; margin-bottom:10px;">Pošalji crtež ili ideju</h3>
+              <p style="font-size:14.5px; color:#a3a7ad; line-height:1.6;">DXF, DWG, skica ili uzorak. Pošalji ono što imaš.</p>
+            </div>
+          </div>
+          <div class="rc-step-card">
+            <div style="aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.12); position:relative;">
+              <img class="rc-step-image" src="assets/proces-2.jpg" alt="Dobiješ ponudu — CNC obrada lima" loading="lazy">
+              <div style="position:absolute; top:14px; left:14px; font-family:'Archivo'; font-weight:900; font-size:34px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.7);">2</div>
+            </div>
+            <div style="padding:26px 24px;">
+              <h3 style="font-size:19px; font-weight:700; margin-bottom:10px;">Dobiješ ponudu</h3>
+              <p style="font-size:14.5px; color:#a3a7ad; line-height:1.6;">Ponudu šaljemo istog dana nakon pregleda zahteva.</p>
+            </div>
+          </div>
+          <div class="rc-step-card">
+            <div style="aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.12); position:relative;">
+              <img class="rc-step-image" src="assets/proces-3.jpg" alt="Sečemo po crtežu — CNC obrada lima" loading="lazy">
+              <div style="position:absolute; top:14px; left:14px; font-family:'Archivo'; font-weight:900; font-size:34px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.7);">3</div>
+            </div>
+            <div style="padding:26px 24px;">
+              <h3 style="font-size:19px; font-weight:700; margin-bottom:10px;">Sečemo po crtežu</h3>
+              <p style="font-size:14.5px; color:#a3a7ad; line-height:1.6;">Laser precizno iseče svaki komad tačno po tehničkom crtežu.</p>
+            </div>
+          </div>
+          <div class="rc-step-card">
+            <div style="aspect-ratio:4/3; overflow:hidden; border-bottom:1px solid rgba(255,255,255,0.12); position:relative;">
+              <img class="rc-step-image" src="assets/proces-4.jpg" alt="Preuzimanje — CNC obrada lima" loading="lazy">
+              <div style="position:absolute; top:14px; left:14px; font-family:'Archivo'; font-weight:900; font-size:34px; color:#fff; text-shadow:0 2px 12px rgba(0,0,0,0.7);">4</div>
+            </div>
+            <div style="padding:26px 24px;">
+              <h3 style="font-size:19px; font-weight:700; margin-bottom:10px;">Preuzimanje</h3>
+              <p style="font-size:14.5px; color:#a3a7ad; line-height:1.6;">Javimo ti kad je gotovo i dolaziš po svoje komade.</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -298,27 +333,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.16em; color:#1f4e9e; margin-bottom:14px;">04 — ZAŠTO MI</div>
       <h2 style="font-size:clamp(30px,4vw,44px); font-weight:800; margin-bottom:48px; max-width:620px;">Stvari po kojima nas pamte</h2>
       <div class="rc-zasto-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:28px;">
-        <sc-for list="{{ reasons }}" as="r" hint-placeholder-count="3">
-          <div style="border-top:2px solid #16181b; padding-top:22px;">
-            <h3 style="font-size:21px; font-weight:700; margin-bottom:12px;">{{ r.title }}</h3>
-            <p style="font-size:15.5px; color:#5c6066; line-height:1.6;">{{ r.desc }}</p>
-          </div>
-        </sc-for>
+        <div style="border-top:2px solid #16181b; padding-top:22px;">
+          <h3 style="font-size:21px; font-weight:700; margin-bottom:12px;">Precizna obrada</h3>
+          <p style="font-size:15.5px; color:#5c6066; line-height:1.6;">Radimo po zadatim tolerancijama. Komad odgovara tehničkom crtežu, dimenziju po dimenziju.</p>
+        </div>
+        <div style="border-top:2px solid #16181b; padding-top:22px;">
+          <h3 style="font-size:21px; font-weight:700; margin-bottom:12px;">Poštovanje rokova</h3>
+          <p style="font-size:15.5px; color:#5c6066; line-height:1.6;">Rok dogovaramo unapred i držimo ga se. Vaša proizvodnja ne staje zbog nas.</p>
+        </div>
+        <div style="border-top:2px solid #16181b; padding-top:22px;">
+          <h3 style="font-size:21px; font-weight:700; margin-bottom:12px;">Dosledan kvalitet</h3>
+          <p style="font-size:15.5px; color:#5c6066; line-height:1.6;">Proveren materijal i čisti rezovi na svakom komadu, od prve narudžbine do serije.</p>
+        </div>
       </div>
 
       <div style="margin-top:72px;">
         <div class="gallery-mask" style="overflow:hidden;">
           <div class="gallery-track" style="display:flex; gap:14px; width:max-content;">
-            <sc-for list="{{ gallery }}" as="g" hint-placeholder-count="10">
-              <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
-                <sc-if value="{{ g.hasImg }}" hint-placeholder-val="{{ false }}">
-                  <img src="{{ g.img }}" alt="{{ g.alt }}" loading="lazy" style="{{ g.imgStyle }}" />
-                </sc-if>
-                <sc-if value="{{ g.noImg }}" hint-placeholder-val="{{ true }}">
-                  <div style="width:100%; height:100%; background-image:repeating-linear-gradient(45deg, #eceef0 0 12px, #f4f5f6 12px 24px); display:grid; place-items:center; font-family:'IBM Plex Mono'; font-size:11px; color:#a3a7ad; letter-spacing:0.1em;">[ FOTOGRAFIJA ]</div>
-                </sc-if>
-              </div>
-            </sc-for>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-1.jpg" alt="Isečeni metalni profili uz papirni crtež" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-2.jpg" alt="Laserska mašina SENFENG u radionici" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-3.jpg" alt="Isečen metalni prsten na radnom stolu" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-4.jpg" alt="Crni dekorativni metalni panel" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-5.jpg" alt="Laserski isečeni metalni delovi" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-6.jpg" alt="Sečenje metalnog logotipa na mašini" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-1.jpg" alt="Isečeni metalni profili uz papirni crtež" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-2.jpg" alt="Laserska mašina SENFENG u radionici" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-3.jpg" alt="Isečen metalni prsten na radnom stolu" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-4.jpg" alt="Crni dekorativni metalni panel" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-5.jpg" alt="Laserski isečeni metalni delovi" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
+            <div class="gallery-item" style="flex:0 0 auto; width:320px; aspect-ratio:4/3; overflow:hidden; position:relative; border:1px solid #e2e4e7;">
+              <img src="assets/galerija-6.jpg" alt="Sečenje metalnog logotipa na mašini" loading="lazy" style="width:100%; height:100%; object-fit:cover; display:block; background:transparent;">
+            </div>
           </div>
         </div>
       </div>
@@ -348,16 +415,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </a>
           </div>
         </div>
-        <div style="background:#fff; border:1px solid #e2e4e7; padding:34px;">
-          <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
-            <div style="padding:40px 8px; text-align:center;">
+        <div data-nosnippet style="background:#fff; border:1px solid #e2e4e7; padding:34px;">
+          <div id="home-form-success" hidden style="padding:40px 8px; text-align:center;">
               <div style="width:56px; height:56px; background:#16181b; color:#fff; display:grid; place-items:center; font-size:26px; margin:0 auto 20px;">✓</div>
               <h3 style="font-size:22px; font-weight:700; margin-bottom:10px;">Upit je poslat</h3>
               <p style="font-size:15.5px; color:#5c6066; line-height:1.6;">Ponudu šaljemo istog dana nakon pregleda zahteva. Hvala!</p>
             </div>
-          </sc-if>
-          <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
-            <form onSubmit="{{ submit }}">
+
+          <form id="home-quote-form">
               <div style="display:flex; flex-direction:column; gap:16px;">
                 <div>
                   <label for="home-ime" style="display:block; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.1em; color:#5c6066; margin-bottom:7px;">IME / FIRMA</label>
@@ -371,14 +436,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                   <label for="home-opis" style="display:block; font-family:'IBM Plex Mono'; font-size:11px; letter-spacing:0.1em; color:#5c6066; margin-bottom:7px;">OPIS POSLA</label>
                   <textarea id="home-opis" required name="opis" rows="4" class="quote-field" placeholder="Materijal, debljina, količina, rok…" style="width:100%; padding:13px 14px; border:1px solid #d7d9dc; font-family:inherit; font-size:15px; resize:vertical; background:#fff; transition:border-color .2s ease, box-shadow .2s ease;"></textarea>
                 </div>
-                <button type="submit" class="quote-btn" style="background:#16181b; color:#fff; border:none; padding:16px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer;">{{ submitLabel }}</button>
-                <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
-                  <p style="font-size:13px; color:#c0392b; text-align:center; margin:0;">Slanje nije uspelo. Pozovite nas na <a href="tel:+381658025085" style="color:#c0392b; font-weight:600;">+381 65 8025085</a> ili pišite na sm.laser.r@gmail.com.</p>
-                </sc-if>
+                <button type="submit" class="quote-btn" style="background:#16181b; color:#fff; border:none; padding:16px; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer;">Pošalji upit  →</button>
+                <p id="home-form-error" role="alert" hidden style="font-size:13px; color:#c0392b; text-align:center; margin:0;">Slanje nije uspelo. Pozovite nas na <a href="tel:+381658025085" style="color:#c0392b; font-weight:600;">+381 65 8025085</a> ili pišite na sm.laser.r@gmail.com.</p>
+
                 <p style="font-size:12.5px; color:#8b9096; text-align:center; margin:0;">Ili nas direktno pozovi na <a href="tel:+381658025085" style="color:#1f4e9e; font-weight:600;">+381 65 8025085</a></p>
               </div>
             </form>
-          </sc-if>
+
         </div>
       </div>
     </section>
@@ -388,17 +452,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div style="font-family:'IBM Plex Mono'; font-size:12px; letter-spacing:0.16em; color:#1f4e9e; margin-bottom:14px;">06 — ČESTA PITANJA</div>
       <h2 style="font-size:clamp(30px,4vw,44px); font-weight:800; margin-bottom:44px;">Pitanja koja nam najčešće stižu</h2>
       <div style="border-top:1px solid #e2e4e7;">
-        <sc-for list="{{ faqs }}" as="f" hint-placeholder-count="6">
-          <div style="border-bottom:1px solid #e2e4e7;">
-            <button onClick="{{ f.toggle }}" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
-              <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">{{ f.q }}</span>
-              <span style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">{{ f.sign }}</span>
-            </button>
-            <sc-if value="{{ f.open }}" hint-placeholder-val="{{ false }}">
-              <p style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">{{ f.a }}</p>
-            </sc-if>
-          </div>
-        </sc-for>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="true" aria-controls="home-faq-answer-0" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">Koje materijale obrađujete?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">–</span>
+          </button>
+          <p id="home-faq-answer-0" style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">Čelik, inox, aluminijum i pocinkovani lim. Ako nisi siguran šta ti treba, javi pa ćemo predložiti.</p>
+        </div>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="false" aria-controls="home-faq-answer-1" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">Da li radite pojedinačne komade?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">+</span>
+          </button>
+          <p id="home-faq-answer-1" hidden style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">Da. Od jednog komada do serije — pristup je isti, precizno i na vreme.</p>
+        </div>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="false" aria-controls="home-faq-answer-2" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">U kom formatu da pošaljem crtež?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">+</span>
+          </button>
+          <p id="home-faq-answer-2" hidden style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">DXF ili DWG. Ako nemaš gotov crtež, možeš poslati skicu ili doneti uzorak.</p>
+        </div>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="false" aria-controls="home-faq-answer-3" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">Koliko brzo dobijem ponudu?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">+</span>
+          </button>
+          <p id="home-faq-answer-3" hidden style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">Ponudu šaljemo istog dana nakon pregleda zahteva.</p>
+        </div>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="false" aria-controls="home-faq-answer-4" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">Koja je maksimalna debljina lima?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">+</span>
+          </button>
+          <p id="home-faq-answer-4" hidden style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">Čelik do 20 mm, inox do 8 mm, aluminijum do 8 mm i pocinkovani lim do 8 mm.</p>
+        </div>
+        <div style="border-bottom:1px solid #e2e4e7;">
+          <button type="button" class="home-faq-toggle" aria-expanded="false" aria-controls="home-faq-answer-5" style="width:100%; background:none; border:none; cursor:pointer; padding:24px 4px; display:flex; align-items:center; justify-content:space-between; gap:20px; text-align:left; font-family:inherit;">
+            <span style="font-family:'Archivo'; font-weight:700; font-size:18px; color:#16181b;">Da li vršite dostavu?</span>
+            <span class="home-faq-sign" aria-hidden="true" style="font-family:'IBM Plex Mono'; font-size:22px; color:#1f4e9e; flex-shrink:0;">+</span>
+          </button>
+          <p id="home-faq-answer-5" hidden style="font-size:16px; color:#5c6066; line-height:1.65; padding:0 4px 26px; margin:0; max-width:680px;">Za veće poslove moguća je dostava po dogovoru.</p>
+        </div>
       </div>
     </section>
 
@@ -440,7 +535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </main>
 
   <footer style="background:#fff; color:#8b9096; border-top:1px solid #e2e4e7;">
-    <div style="max-width:1200px; margin:0 auto; padding:40px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+    <div data-nosnippet style="max-width:1200px; margin:0 auto; padding:40px 24px; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
       <a href="#top" style="display:inline-flex; align-items:center;">
         <img src="assets/logo.png" alt="Radosavljević CNC obrada lima — nazad na vrh" style="height:42px; width:auto; display:block;" />
       </a>
@@ -449,121 +544,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  state = { menuOpen: false, openFaq: 0, sent: false, hoveredService: -1, hoveredStep: -1, sending: false, error: false };
+<script>
+(() => {
+  const mobileMenu = document.querySelector('.rc-mobile-menu');
+  mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+    mobileMenu.open = false;
+  }));
 
-  submit = async (e) => {
-    e.preventDefault();
+  const faqButtons = [...document.querySelectorAll('.home-faq-toggle')];
+  faqButtons.forEach(button => button.addEventListener('click', () => {
+    const wasOpen = button.getAttribute('aria-expanded') === 'true';
+    faqButtons.forEach(item => {
+      const open = item === button && !wasOpen;
+      item.setAttribute('aria-expanded', String(open));
+      document.getElementById(item.getAttribute('aria-controls')).hidden = !open;
+      item.querySelector('.home-faq-sign').textContent = open ? '–' : '+';
+    });
+  }));
+
+  const form = document.getElementById('home-quote-form');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const error = document.getElementById('home-form-error');
+  const success = document.getElementById('home-form-success');
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+    error.hidden = true;
     const productionHosts = new Set(['cnc-radosavljevic.com', 'www.cnc-radosavljevic.com']);
     if (!productionHosts.has(window.location.hostname)) {
-      this.setState({ sending: false, error: true });
+      error.hidden = false;
       return;
     }
-    const form = e.target;
-    const fd = new FormData(form);
+    const fields = new FormData(form);
     const payload = {
-      ime: fd.get("ime"),
-      kontakt: fd.get("kontakt"),
-      opis: fd.get("opis"),
-      _subject: "Novi upit sa sajta — Radosavljević CNC",
-      _template: "table",
+      ime: fields.get('ime'), kontakt: fields.get('kontakt'), opis: fields.get('opis'),
+      _subject: 'Novi upit sa sajta — Radosavljević CNC', _template: 'table'
     };
-    this.setState({ sending: true, error: false });
+    submitButton.disabled = true;
+    submitButton.textContent = 'Šaljem…';
     try {
-      const res = await fetch("https://formsubmit.co/ajax/sm.laser.r@gmail.com", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "application/json" },
-        body: JSON.stringify(payload),
+      const response = await fetch('https://formsubmit.co/ajax/sm.laser.r@gmail.com', {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(payload)
       });
-      if (!res.ok) throw new Error("bad status");
-      this.setState({ sent: true, sending: false });
-    } catch (err) {
-      this.setState({ sending: false, error: true });
+      if (!response.ok) throw new Error('bad status');
+      form.hidden = true;
+      success.hidden = false;
+    } catch {
+      error.hidden = false;
+      submitButton.disabled = false;
+      submitButton.textContent = 'Pošalji upit  →';
     }
-  };
-  toggleMenu = () => this.setState(s => ({ menuOpen: !s.menuOpen }));
-  closeMenu = () => this.setState({ menuOpen: false });
-
-  renderVals() {
-    const openFaq = this.state.openFaq;
-    const hs = this.state.hoveredService;
-    const servicesRaw = [
-      { no: "01", title: "Lasersko sečenje", href: "/lasersko-secenje-lima/", desc: "Čisti rezovi na čeliku, inoxu i aluminijumu. Ivice su gotove, bez naknadne obrade.", tags: ["Čelik", "Inox", "Aluminijum", "Pocinkovano"] },
-      { no: "02", title: "Izrada crteža", href: "/izrada-crteza-za-cnc-secenje/", desc: "Nemaš tehnički crtež? Napravimo ga po tvojoj ideji, skici ili uzorku, spreman za sečenje.", tags: ["DXF / DWG", "Po skici", "Po uzorku"] },
-      { no: "03", title: "Dekorativni paneli", href: "/cnc-ograde/", desc: "Ukrasni paneli za ograde, kapije i enterijer. Šara po želji, isečena čisto i precizno.", tags: ["Ograde", "Kapije", "Enterijer"] },
-      { no: "04", title: "Izrada po meri", href: "/usluzno-secenje-lima/", desc: "Izradimo komad po tvojoj zamisli — od prototipa do gotove serije, tačno po specifikaciji.", tags: ["Prototip", "Custom", "Serija"] },
-    ];
-    const services = servicesRaw.map((s, i) => {
-      const on = hs === i;
-      return {
-        ...s,
-        cardStyle: { background: on ? "#16181b" : "#fff", padding: "40px 34px 34px", position: "relative", overflow: "hidden", cursor: "pointer", transition: "background .25s ease, transform .25s ease, box-shadow .25s ease", minHeight: "252px", display: "flex", flexDirection: "column", transform: on ? "translateY(-8px)" : "translateY(0)", boxShadow: on ? "0 20px 38px rgba(0,0,0,0.28)" : "0 0 0 rgba(0,0,0,0)", zIndex: on ? "2" : "1" },
-        ghostStyle: { position: "absolute", top: "-14px", right: "18px", fontFamily: "'Archivo'", fontWeight: "900", fontSize: "120px", lineHeight: "1", color: on ? "rgba(94,155,232,0.16)" : "#f0f1f2", transition: "color .25s ease", pointerEvents: "none" },
-        barStyle: { width: on ? "48px" : "24px", height: "3px", background: "#2e6fc7", marginBottom: "20px", transition: "width .25s ease" },
-        titleStyle: { fontSize: "23px", fontWeight: "700", marginBottom: "12px", color: on ? "#fff" : "#16181b", transition: "color .25s ease", position: "relative" },
-        descStyle: { fontSize: "15.5px", lineHeight: "1.6", color: on ? "#a3a7ad" : "#5c6066", transition: "color .25s ease", position: "relative", marginBottom: "22px" },
-        tagStyle: { fontFamily: "'IBM Plex Mono'", fontSize: "11px", letterSpacing: "0.06em", padding: "6px 11px", border: on ? "1px solid rgba(255,255,255,0.22)" : "1px solid #e2e4e7", color: on ? "#c9ccd1" : "#8b9096", transition: "all .25s ease" },
-        onEnter: () => this.setState({ hoveredService: i }),
-        onLeave: () => this.setState(st => (st.hoveredService === i ? { hoveredService: -1 } : null)),
-      };
-    });
-    const reasons = [
-      { title: "Precizna obrada", desc: "Radimo po zadatim tolerancijama. Komad odgovara tehničkom crtežu, dimenziju po dimenziju." },
-      { title: "Poštovanje rokova", desc: "Rok dogovaramo unapred i držimo ga se. Vaša proizvodnja ne staje zbog nas." },
-      { title: "Dosledan kvalitet", desc: "Proveren materijal i čisti rezovi na svakom komadu, od prve narudžbine do serije." },
-    ];
-    const stepsRaw = [
-      { no: "1", title: "Pošalji crtež ili ideju", desc: "DXF, DWG, skica ili uzorak. Pošalji ono što imaš.", img: "assets/proces-1.jpg" },
-      { no: "2", title: "Dobiješ ponudu", desc: "Ponudu šaljemo istog dana nakon pregleda zahteva.", img: "assets/proces-2.jpg" },
-      { no: "3", title: "Sečemo po crtežu", desc: "Laser precizno iseče svaki komad tačno po tehničkom crtežu.", img: "assets/proces-3.jpg" },
-      { no: "4", title: "Preuzimanje", desc: "Javimo ti kad je gotovo i dolaziš po svoje komade.", img: "assets/proces-4.jpg" },
-    ];
-    const hp = this.state.hoveredStep;
-    const steps = stepsRaw.map((s, i) => {
-      const on = hp === i;
-      return {
-        ...s, hasImg: !!s.img, noImg: !s.img,
-        imgStyle: { width: "100%", height: "100%", objectFit: "cover", display: "block", transform: on ? "scale(1.08)" : "scale(1)", transition: "transform .35s ease" },
-        cardStyle: { background: "#16181b", display: "flex", flexDirection: "column", transform: on ? "translateY(-10px)" : "translateY(0)", boxShadow: on ? "0 22px 40px rgba(0,0,0,0.5)" : "0 0 0 rgba(0,0,0,0)", zIndex: on ? "2" : "1", position: "relative", transition: "transform .3s ease, box-shadow .3s ease" },
-        onEnter: () => this.setState({ hoveredStep: i }),
-        onLeave: () => this.setState(st => (st.hoveredStep === i ? { hoveredStep: -1 } : null)),
-      };
-    });
-    const clients = ["MAŠINSTVO", "GRAĐEVINA", "OPREMANJE", "AUTO DELOVI", "PRIVATNO"];
-    const galleryBase = [
-      { img: "assets/galerija-1.jpg", alt: "Isečeni metalni profili uz papirni crtež" },
-      { img: "assets/galerija-2.jpg", alt: "Laserska mašina SENFENG u radionici" },
-      { img: "assets/galerija-3.jpg", alt: "Isečen metalni prsten na radnom stolu" },
-      { img: "assets/galerija-4.jpg", alt: "Crni dekorativni metalni panel" },
-      { img: "assets/galerija-5.jpg", alt: "Laserski isečeni metalni delovi" },
-      { img: "assets/galerija-6.jpg", alt: "Sečenje metalnog logotipa na mašini" },
-    ];
-    const gallery = [...galleryBase, ...galleryBase].map(g => ({
-      img: g.img, hasImg: !!g.img, noImg: !g.img, alt: g.alt || "Rad iz radionice",
-      imgStyle: { width: "100%", height: "100%", objectFit: g.contain ? "contain" : "cover", display: "block", background: g.contain ? "#eceef0" : "transparent" },
-    }));
-    const faqData = [
-      { q: "Koje materijale obrađujete?", a: "Čelik, inox, aluminijum i pocinkovani lim. Ako nisi siguran šta ti treba, javi pa ćemo predložiti." },
-      { q: "Da li radite pojedinačne komade?", a: "Da. Od jednog komada do serije — pristup je isti, precizno i na vreme." },
-      { q: "U kom formatu da pošaljem crtež?", a: "DXF ili DWG. Ako nemaš gotov crtež, možeš poslati skicu ili doneti uzorak." },
-      { q: "Koliko brzo dobijem ponudu?", a: "Ponudu šaljemo istog dana nakon pregleda zahteva." },
-      { q: "Koja je maksimalna debljina lima?", a: "Čelik do 20 mm, inox do 8 mm, aluminijum do 8 mm i pocinkovani lim do 8 mm." },
-      { q: "Da li vršite dostavu?", a: "Za veće poslove moguća je dostava po dogovoru." },
-    ];
-    const faqs = faqData.map((f, i) => ({
-      q: f.q, a: f.a, open: openFaq === i, sign: openFaq === i ? "–" : "+",
-      toggle: () => this.setState(s => ({ openFaq: s.openFaq === i ? -1 : i })),
-    }));
-    return {
-      services, reasons, steps, clients, faqs, gallery,
-      menuOpen: this.state.menuOpen, toggleMenu: this.toggleMenu, closeMenu: this.closeMenu,
-      sent: this.state.sent, notSent: !this.state.sent, submit: this.submit,
-      error: this.state.error, submitLabel: this.state.sending ? "Šaljem…" : "Pošalji upit  →",
-    };
-  }
-}
+  });
+})();
 </script>
 </body>
 </html>
