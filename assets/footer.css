@@ -1,0 +1,12 @@
+.site-footer { border-top: 1px solid #e2e4e7; background: #fff; color: #16181b; }
+.site-footer__inner { max-width: 1200px; padding: 40px 24px; margin: 0 auto; }
+.site-footer__top { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.site-footer__brand { display: inline-flex; flex-shrink: 0; }
+.site-footer__brand img { display: block; width: auto; height: 42px; }
+.site-footer__links { display: flex; flex-wrap: wrap; gap: 12px 22px; }
+.site-footer__links a { font-size: 14px; }
+.site-footer__links a:hover { color: #1f4e9e; }
+.site-footer a:focus-visible { outline: 3px solid #2e6fc7; outline-offset: 4px; }
+.site-footer__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 24px; flex-wrap: wrap; margin-top: 24px; padding-top: 18px; border-top: 1px solid #e2e4e7; color: #626972; }
+.site-footer__meta p { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0; font: 400 12px/1.6 'IBM Plex Mono', monospace; }
+.site-footer__meta small { font: 400 12px/1.6 'IBM Plex Mono', monospace; letter-spacing: .06em; }
