@@ -10,3 +10,23 @@
 .site-footer__meta { display: flex; justify-content: space-between; align-items: baseline; gap: 12px 24px; flex-wrap: wrap; margin-top: 24px; padding-top: 18px; border-top: 1px solid #e2e4e7; color: #626972; }
 .site-footer__meta p { display: flex; flex-wrap: wrap; gap: 6px 20px; margin: 0; font: 400 12px/1.6 'IBM Plex Mono', monospace; }
 .site-footer__meta small { font: 400 12px/1.6 'IBM Plex Mono', monospace; letter-spacing: .06em; }
+@media (max-width: 600px) {
+  .site-footer__inner { padding: 32px 24px 28px; }
+  .site-footer__top { display: block; }
+  .site-footer__brand { margin-bottom: 20px; }
+  .site-footer__links { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+  .site-footer__links a { display: block; padding: 8px 0; line-height: 1.35; }
+  .site-footer__links a:nth-child(5) { grid-column: 1 / -1; }
+  .site-footer__links a:nth-child(6), .site-footer__links a:nth-child(7) { margin-top: 8px; padding-top: 16px; border-top: 1px solid #e2e4e7; }
+  .site-footer__meta { display: block; margin-top: 16px; padding-top: 16px; }
+  .site-footer__meta p { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px 12px; font-size: 11px; }
+  .site-footer__meta p span { overflow-wrap: anywhere; }
+  .site-footer__meta p span:last-child { grid-column: 1 / -1; }
+  .site-footer__meta small { display: block; margin-top: 16px; font-size: 11px; letter-spacing: 0; }
+  .site-footer__meta small span { display: block; }
+  .site-footer__meta small .site-footer__separator { display: none; }
+}
+@media (max-width: 360px) {
+  .site-footer__meta p { grid-template-columns: 1fr; }
+  .site-footer__meta p span:last-child { grid-column: auto; }
+}
